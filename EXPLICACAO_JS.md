@@ -35,7 +35,4 @@ Sim! A `anon key` (chave anônima) é feita para ser usada no Frontend. Ela só 
 
 ---
 
-## Dicas para o Professor
-- Mostre que o Supabase é baseado em **PostgreSQL**, o banco de dados mais usado por empresas profissionais.
-- Mostre aos alunos como o e-mail aparece na aba **Authentication** e como você pode deletar ou bloquear usuários por lá.
-- Desative o **Email Confirmation** no painel do Supabase para que a aula flua sem que os alunos precisem abrir suas caixas de e-mail.
+
