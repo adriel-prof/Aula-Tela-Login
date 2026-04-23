@@ -1,0 +1,117 @@
+:root {
+  --bg-color: #121214;
+  --surface-color: #1e1e21;
+  --primary-color: #ffb800;
+  --text-primary: #ffffff;
+  --text-secondary: #a8a8b3;
+  --input-border: #323238;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.form-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.image-section {
+  flex: 1;
+  background-image: url("assets/side-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Esconder imagem no mobile */
+@media (max-width: 768px) {
+  .image-section {
+    display: none;
+  }
+}
+
+/* Estilo dos inputs */
+.input-field {
+  background: var(--bg-color);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin-top: 8px;
+  gap: 12px;
+}
+
+.input-field input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 16px;
+  flex: 1;
+  outline: none;
+}
+
+.input-field input::placeholder {
+  color: var(--text-secondary);
+}
+
+.input-field button {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.input-field:focus-within {
+  border-color: var(--primary-color);
+}
+
+.input-field button:hover {
+  filter: brightness(0.8);
+}
+
+/* Fix para o fundo amarelo/branco no preenchimento automático (Autofill) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-primary);
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #121214;
+  font-weight: bold;
+  border: none;
+  padding: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 24px;
+  transition: filter 0.2s;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.9);
+}

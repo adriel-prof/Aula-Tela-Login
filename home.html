@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camp.in - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .home-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        padding: 20px;
+      }
+      .user-info {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 20px;
+      }
+      .btn-logout {
+        margin-top: 20px;
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .btn-logout:hover {
+        background-color: #ff1a1a;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="home-container">
+      <img src="assets/logo.svg" alt="Camp.in Logo" class="logo" style="width: 150px; margin-bottom: 20px;"/>
+      
+      <div class="user-info">
+        <h1>Bem-vindo ao Camp.in! 🎉</h1>
+        <p>Você está logado com sucesso via Supabase.</p>
+        <p id="user-display" style="font-weight: bold; color: #61fbaf; margin-top: 10px;"></p>
+        
+        <button id="btn-logout" class="btn-logout">Sair do Sistema</button>
+      </div>
+    </main>
+
+    <script type="module">
+      import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
+
+      // TODO: Substitua pelos dados do seu projeto Supabase (Configurações -> API)
+      const SUPABASE_URL = 'COLE_SUA_URL_AQUI';
+      const SUPABASE_KEY = 'COLE_SUA_KEY_ANON_AQUI';
+
+      const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      // Verifica sessão
+      async function checkUser() {
+        const { data: { user } } = await supabase.auth.getUser();
+        
+        if (user) {
+          document.getElementById('user-display').textContent = `Usuário: ${user.email}`;
+        } else {
+          window.location.href = 'index.html';
+        }
+      }
+
+      checkUser();
+
+      // Lógica de Sair
+      document.getElementById('btn-logout').onclick = async () => {
+        await supabase.auth.signOut();
+        window.location.href = 'index.html';
+      };
+    </script>
+  </body>
+</html>

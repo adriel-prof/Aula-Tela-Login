@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camp.in - Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="login-container">
+      <!-- Lado Esquerdo: Formulário -->
+      <section class="form-section">
+        <header>
+          <img src="assets/logo.svg" alt="Camp.in Logo" class="logo" />
+        </header>
+
+        <div class="form-wrapper">
+          <div class="title-group">
+            <img src="assets/log-in.svg" alt="" />
+            <h1>Faça seu login</h1>
+          </div>
+          <p>Entre com suas informações de cadastro.</p>
+
+          <form id="login-form">
+            <div class="input-group">
+              <label for="email">E-mail</label>
+              <div class="input-field">
+                <img src="assets/mail.svg" alt="" />
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Digite seu e-mail"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="password">Senha</label>
+              <div class="input-field">
+                <img src="assets/lock.svg" alt="" />
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Digite sua senha"
+                  required
+                />
+                <button type="button" id="toggle-password">
+                  <img src="assets/eye.svg" alt="Mostrar senha" />
+                </button>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <label class="checkbox-container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Lembre-me
+              </label>
+              <a href="#" class="forgot-link">Esqueci minha senha</a>
+            </div>
+
+            <button type="submit" class="btn-primary">ENTRAR</button>
+          </form>
+
+          <footer>Não tem uma conta? <a href="register.html">Registre-se</a></footer>
+        </div>
+      </section>
+
+      <!-- Lado Direito: Imagem (Escondido em mobile) -->
+      <section class="image-section"></section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
