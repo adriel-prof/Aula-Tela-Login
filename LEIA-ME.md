@@ -26,4 +26,4 @@ Este projeto foi preparado para que você possa focar no desenvolvimento do **HT
 - **Foco no Design**: O objetivo desta aula é que cada estudante crie uma interface única e funcional.
 
 ---
-*Dúvidas? Pergunte ao professor durante a aula!*
+*Dúvidas? Me pergunte durante a aula!*
